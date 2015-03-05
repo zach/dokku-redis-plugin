@@ -76,7 +76,7 @@ case "$1" in
 
     # Launch container
     dokku_log_info1 "Starting Redis container..."
-    ID=$(docker run -v $VOLUME -p 6379 --name $REDIS_CONTAINER_NAME -d sekjun9878/redis /bin/start_redis.sh)
+    ID=$(docker run -v $VOLUME -p 6379:6379 --name $REDIS_CONTAINER_NAME -d sekjun9878/redis /bin/start_redis.sh)
     sleep 4
 
     # Link to app
